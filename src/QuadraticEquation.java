@@ -1,4 +1,33 @@
-package PACKAGE_NAME;
+
+import java.util.Scanner;
 
 public class QuadraticEquation {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a: ");
+        double a = scanner.nextDouble();
+
+        System.out.print("Enter b: ");
+        double b = scanner.nextDouble();
+
+        System.out.print("Enter c: ");
+        double c = scanner.nextDouble();
+
+        double d = b * b - 4 * a * c;
+
+        if (a == 0) {
+            System.out.println("Not a quadratic equation");
+        } else if (d < 0) {
+            System.out.println("No real roots");
+        } else {
+            double root1 = (-b + Math.sqrt(d)) / (2 * a);
+            double root2 = (-b - Math.sqrt(d)) / (2 * a);
+
+            System.out.println("Root 1: " + root1);
+            System.out.println("Root 2: " + root2);
+        }
+
+        scanner.close();
+    }
 }
